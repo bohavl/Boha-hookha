@@ -20,7 +20,7 @@ h2{font-size:17px;font-weight:600;margin:0}
 h3{font-size:13px;font-weight:400;text-transform:uppercase;letter-spacing:.2px;color:var(--tx2);margin:22px 16px 7px}
 .navbtn{width:36px;height:36px;border-radius:18px;background:linear-gradient(135deg,var(--tint),var(--tint2));display:grid;place-items:center;margin-bottom:3px}
 .navbtn svg{stroke:#fff}
-.sub{font-size:15px;color:var(--tx2)}.foot{font-size:13px;color:var(--tx2);margin:8px 16px 0}
+.sub{font-size:15px;color:var(--tx2)}.na{animation:none!important}.li .t.w div{white-space:normal}.foot{font-size:13px;color:var(--tx2);margin:8px 16px 0}
 .chips{display:flex;gap:8px;overflow-x:auto;margin:0 -16px;padding:2px 16px 12px;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}
 .chips.wrap{flex-wrap:wrap;overflow:visible;margin:0;padding:0}
 .chip{flex:none;min-height:36px;padding:0 14px;border-radius:18px;background:var(--fill);font-size:15px;font-weight:500;display:inline-flex;align-items:center;gap:7px;white-space:nowrap}
@@ -174,7 +174,9 @@ const M={};{const o='CBTFDKRXO',r=['5 9 9 75 3 6 8 9 3','9 6 65 8 85 7 7 8 4','9
 const SYN=new Set('lemon+mint lime+mint citrus+mint mango+passion strawberry+banana watermelon+melon cola+lemon cola+lime cola+cherry peach+tea lemon+tea berries+icecream strawberry+cream strawberry+icecream blueberry+icecream pineapple+coconut grapefruit+raspberry grapefruit+strawberry kiwi+strawberry blueberry+mint cherry+chocolate banana+chocolate banana+cookie mango+lime orange+mango watermelon+mint melon+mint apple+mint grape+mint pineapple+mint bcurrant+mint pear+lime peach+passion raspberry+lemon honey+lemon mango+ice watermelon+ice grape+ice apple+ice lime+ice lemon+ice berries+ice'.split(' '));
 
 /* ---------- Каталог: назва|опис|ноти|лінійка. Зібрано з українських кальянних магазинів, 10.2026 ---------- */
-const BR={f:'420',u:'Unity',h:'Heven',c:'CULTt',k:'Custom'};
+const BR={f:'420',u:'Unity',h:'Heven',c:'CULTt',k:'Custom',y:'Yummy',r:'Creepy',d:'Dead Horse',l:'Lagom',m:'Molfar',o:'Orwell',L:'Loud',s:'Spam',g:'Gedonist',e:'Enigma'};
+/* міцність за лінійкою: 1 легкий, 2 середній, 3 міцний */
+const BS={f:2,u:2,h:2,c:1,k:2,y:1,r:2,d:3,l:2,m:2,o:2,L:1,s:2,g:2,e:2},LNS={Light:1},STL=['','Легкий','Середній','Міцний'];
 const RAW={f:`Apple Squirt|Яблучна цукерка|apple,candy
 Bananaway|Банан|banana
 Barberry Candy|Барбарисова цукерка|barberry,candy
@@ -221,7 +223,67 @@ Pear Soda|Грушевий лимонад, холод|pear,lemonade,ice|Frost
 Pink Berries|Ягоди, холод|berries,ice|Frost
 Red Kiwi|Ківі, холод|kiwi,ice|Frost
 Thailand Shot|Манго, помело, папая, холод|mango,pomelo,papaya,ice|Frost
-Toxic Cactus|Кактус, лимон, лайм, ківі, холод|cactus,lemon,lime,kiwi,ice|Frost`,
+Toxic Cactus|Кактус, лимон, лайм, ківі, холод|cactus,lemon,lime,kiwi,ice|Frost
+Lemon Pie|Лимонний пиріг|lemon,cake
+Mandarin Lemonade|Мандариновий лимонад|orange,lemonade
+Orange Zest|Апельсинова цедра|orange
+Jungle Fruit|Тропічні фрукти|tropic
+Punk Cherry|Вишня|cherry
+Watermelon Margarita|Кавунова маргарита|watermelon,lime,alco
+Cream Liqueur|Вершковий лікер|cream,alco
+Feijoa|Фейхоа|tropic
+Fruit Flakes|Фруктові пластівці|cookie,candy
+Sea Buckthorn|Обліпиха|berries,sour
+Pistachio Cream|Фісташковий крем|nut,cream
+Scotch Whisky|Віскі|alco
+Toxic Candy|Кисла цукерка|candy,sour
+Tropic Maracuja|Тропіки, маракуя|tropic,passion
+Turbo|Жуйка Turbo|gum
+Tutti Frutti|Тутті-фрутті|candy,tropic
+Waffle|Вафлі|cake
+Porn Star Martini|Маракуя, коктейль|passion,alco
+Ice Grape Berry|Виноград, ягоди, холод|grape,berries,ice|Frost
+Malibu Vibe|Кокос, ром, холод|coconut,alco,ice|Frost
+Waterberry Shot|Кавун, ягоди, холод|watermelon,berries,ice|Frost
+Love Is|Жуйка, холод|gum,ice|Frost
+Айс груша||pear,ice|Light
+Айс лимон, м'ята||lemon,mint,ice|Light
+Айс лимон, малина||lemon,raspberry,ice|Light
+Айс яблуко||apple,ice|Light
+Ананасовий смузі||pineapple|Light
+Апельсин, манго||orange,mango|Light
+Апельсин, полуниця||orange,strawberry|Light
+Виноград, м'ята||grape,mint|Light
+Вишня, барбарис||cherry,barberry|Light
+Грейпфрут, малина||grapefruit,raspberry|Light
+Грушевий лимонад||pear,lemonade|Light
+Енергетичний напій||energy|Light
+Кавун, лимон||watermelon,lemon|Light
+Кавуново-динний сорбет||watermelon,melon|Light
+Каламансі||citrus,sour|Light
+Лав 66||passion,melon,watermelon,mint|Light
+Лайм, персик||lime,peach|Light
+Лімончелло||lemon,alco|Light
+Манго, персик, диня||mango,peach,melon|Light
+Молочне печиво||cookie,cream|Light
+Морозиво||icecream|Light
+Огірковий лимонад||cucumber,lemonade|Light
+Полуниця, базилік||strawberry,herb|Light
+Полуничний мільфей||strawberry,cake,cream|Light
+Рафаелло||coconut,nut,cream|Light
+Рожевий лимонад||lemonade,berries|Light
+Синій лимонад||lemonade,citrus|Light
+Скіттлс||candy,sour|Light
+Тропічний сік||tropic|Light
+Фруктова жуйка||gum|Light
+Цитрусовий лимонад||citrus,lemonade|Light
+Чорниця, м'ята||blueberry,mint|Light
+Чорничний мафін||blueberry,cake|Light
+Яблучні ведмедики||apple,jelly|Light
+Ягідна жуйка||gum,berries|Light
+Ягідне морозиво||berries,icecream|Light
+Ягідний морс||berries|Light
+Свіжі ягоди||berries|Light`,
 u:`Acid Berry|Кислі ягоди|berries,sour
 Acid Lemon|Кислий лимон|lemon,sour
 Berry Jelly|Ягідне желе|berries,jelly
@@ -260,7 +322,14 @@ Umai|Персиковий чай|peach,tea
 Voltage Gum|Жуйка, енергетик, гуава|gum,energy,guava
 Watermelon Ice Cream|Кавунове морозиво|watermelon,icecream|x Lebiga
 Watermelon Melon Orbit|Кавун, диня, жуйка|watermelon,melon,gum
-Wild Berries|Суниця|wstraw`,
+Wild Berries|Суниця|wstraw
+Cherry Shot|Вишня|cherry
+Coconut Shake|Кокосовий шейк|coconut,cream
+Fruittella|Фруктова цукерка|candy
+Lemon Mint Sorbet|Лимон, м'ята, сорбет|lemon,mint
+Turbo|Жуйка Turbo|gum
+Sour Marulla|Кисла марула|tropic,sour
+Pineapple Grapefruit Lemon|Ананас, грейпфрут, лимон|pineapple,grapefruit,lemon`,
 h:`Aura Noir|Сигара, шоколад, кава|cigar,chocolate,coffee
 Aura Wood|Сигара, дерево|cigar
 Banana|Банан|banana
@@ -289,7 +358,12 @@ Raspberry|Малина|raspberry
 Strawberries|Полуниця|strawberry
 Tropical|Тропіки, маракуя|tropic,passion
 Twin Berry|Малина, чорниця|raspberry,blueberry
-Watermelon|Кавун|watermelon`,
+Watermelon|Кавун|watermelon
+Acai|Асаї|berries
+Barberry|Барбарис|barberry
+Colder|Холодок|ice
+Fruit Gum|Фруктова жуйка|gum
+Sour Citrus|Кислий цитрус|citrus,sour`,
 c:`G03 Cactus Lime|Кактус, лайм|cactus,lime|Gold
 G04 Yogurt|Йогурт|cream|Gold
 G05 Mojito|Мохіто|lime,mint|Gold
@@ -329,9 +403,221 @@ k:`Айс кенді||candy,ice
 Шовковиця, смузі||berries
 Ягідна база||berries
 Цитрусова база||citrus
-Тропічна база||tropic`};
+Тропічна база||tropic
+Груша, джем||pear,jam`,
+y:`Апельсин, грейпфрут||orange,grapefruit
+Банан, полуниця||banana,strawberry
+Банановий мілкшейк||banana,cream
+Вишнева кола||cherry,cola
+Диня, м'ята, ягоди||melon,mint,berries
+Диня, чорниця, м'ята||melon,blueberry,mint
+Екзотик||tropic
+Кавун, диня||watermelon,melon
+Кавуновий лимонад||watermelon,lemonade
+Лайм, чорниця||lime,blueberry
+Лимон, лайм||lemon,lime
+Лимонад, смородина||lemonade,bcurrant
+Лісові ягоди||berries
+М'ятний раф||mint,coffee,cream
+Мандариновий джем||orange,jam
+Мармеладні ведмедики||jelly
+Мохіто||lime,mint
+Огірковий лимонад||cucumber,lemonade
+Персик, малина||peach,raspberry
+Піна колада||pineapple,coconut
+Полуниця, ківі, лайм||strawberry,kiwi,lime
+Полуничний чізкейк||strawberry,cake,cream
+Рожевий лимонад||lemonade,berries
+Синій лимонад||lemonade,citrus
+Тірамісу||coffee,cream,cake
+Тропічний енергетик||tropic,energy
+Фіолетові цукерки||candy,grape
+Фруктове морозиво||icecream,tropic
+Цитрусовий мікс||citrus
+Ягідний сорбет||berries`,
+r:`Berry Halls||berries,mint
+Butter Beer|Вершкове пиво|cream,alco
+Citrus Mix||citrus
+Cookies for Santa||cookie
+Banana||banana
+Blueberry||blueberry
+Bubble Gum||gum
+Cherry||cherry
+Cola||cola
+Grape Chuppa||grape,candy
+Kiwi Juice||kiwi
+Lemon||lemon
+Lemongrass|Лемонграс|herb,lemon
+Mango||mango
+Mtn Dew|Цитрусова газована|lemonade,citrus
+Orange||orange
+Pineapple||pineapple
+Raspberry||raspberry
+Double Melon||melon
+Green Apple||apple
+Lavander Lemonade|Лавандовий лимонад|flower,lemonade
+Lemon Berry||lemon,berries
+Papaya Sorbet||papaya
+Strawberry Dessert||strawberry,cream
+Tropicana||tropic
+Frosty||ice`,
+d:`Banana||banana
+Berry's Orange||berries,orange
+Cane Mint||mint
+Cherry Limonade||cherry,lemonade
+Citrus Cream||citrus,cream
+Citrus Jelly||citrus,jelly
+Cukamansi|Огірок, каламансі|cucumber,citrus
+Eclair|Еклер|cake,cream
+Grape Juice||grape
+Grapefruit||grapefruit
+Kalee Kumquat|Кумкват|citrus
+Lemon Tea||lemon,tea
+Lime Candy||lime,candy
+Malibu|Кокос, ром|coconut,alco
+Mango Lassi||mango,cream
+Needls||pine
+Peach Limeade||peach,lime,lemonade
+Pear Jam||pear,jam
+Pineapple Rings||pineapple
+Pink Peach||peach
+Raspberry Soda||raspberry,lemonade
+Ruby Lemonade||grapefruit,lemonade
+Sour Apple||apple,sour
+Tropic Lemonade||tropic,lemonade
+Acai Ice Cream||berries,icecream
+Aperol Spritz||orange,alco
+Elderberry|Бузина|flower,berries
+Energy Mango||energy,mango
+Honey Halls||honey,mint
+Kiwi||kiwi
+Passion Fruit||passion
+Starfruit Lemonade|Карамболь, лимонад|tropic,lemonade
+Vanilla Drink|Ванільний напій|cream
+Watermelon Gum||watermelon,gum
+Zen Tea||tea`,
+l:`Bergamia|Бергамот|citrus,tea|Main
+Bloody Orange|Червоний апельсин|orange|Main
+Bunny Orange||orange|Main
+Cherry Wave||cherry|Main
+Citrus Sour||citrus,sour|Main
+Critical Mint||mint|Main
+Koala Mint||mint,ice|Main
+Cypress|Кипарис|pine|Main
+Lavandefull|Лаванда|flower|Main
+Lemon Zest|Лимонна цедра|lemon|Main
+Red Ribes|Червона смородина|rcurrant|Main
+Sugar Mango||mango|Main
+Zespri Red|Червоний ківі|kiwi|Main`,
+m:`Апельсин||orange|Chill
+Бергамот||citrus,tea|Chill
+Вишнівка||cherry,alco|Chill
+Жуйка Turbo||gum|Chill
+Зелене манго||mango,sour|Chill
+Йогуртовий лайм||cream,lime|Chill
+Кавунове зілля||watermelon|Chill
+Рубіновий лимонад||grapefruit,lemonade|Chill
+Соковитий персик||peach|Chill
+Терпка журавлина||cranberry|Chill
+Тропічний смузі||tropic|Chill`,
+o:`Arctic||ice|Medium
+Banana Berry||banana,berries|Medium
+Berry Dessert||berries,cream|Medium
+Blu Mis||blueberry,mint|Medium
+Capri Sun||orange,tropic|Medium
+Citrus Splash||citrus|Medium
+Cola Vanilla||cola,cream|Medium
+Drive Energy||energy|Medium
+Fragolino Rosso|Полуничне ігристе|strawberry,alco|Medium
+Fyger Kiwi||kiwi|Medium
+G_fruit||grapefruit|Medium
+Grape Chups||grape,candy|Medium
+Hubba Bubba||gum|Medium
+Jelly Worms|Кислі желейні черв'ячки|jelly,sour|Medium
+Lemon X||lemon|Medium
+Lime Juice||lime|Medium
+Mint||mint|Medium
+Mix Berry||berries|Medium
+Mystery Tropic||tropic|Medium
+Raspberry||raspberry|Medium
+Summer Peach Tea||peach,tea|Medium
+Tic-Tac||candy,mint|Medium`,
+L:`Aperol Spritz||orange,alco|Light
+Asian Fruit||tropic|Light
+Banana Shake||banana,cream|Light
+Barberry Candy||barberry,candy|Light
+Bellini|Персик, ігристе|peach,alco|Light
+Berry Elixir||berries|Light
+Blackberry||blackberry|Light
+Carpathian Berry||berries|Light
+Cherry Cola||cherry,cola|Light
+Citrus Mix||citrus|Light
+Coco Love||coconut|Light
+Corn'pop|Кукурудзяні пластівці|cookie|Light
+Exotic Fruits||tropic|Light
+Fruit Jam||jam,berries|Light
+Grape Soda||grape,lemonade|Light
+Kiwi-Strawberry||kiwi,strawberry|Light
+Lemon Drops||lemon,candy|Light
+Lemon Pie||lemon,cake|Light
+Mango-Cheese||mango,cream|Light
+Mintology||mint|Light
+Pina Colada||pineapple,coconut|Light`,
+s:`Ягідний кекс||berries,cake
+Абрикос||peach
+Ананас, лимон||pineapple,lemon
+Апельсин, мандарин||orange
+Банан||banana
+Бергамот, ківі||citrus,kiwi
+Виноград, ягоди||grape,berries
+Вишня||cherry
+Вишня, папая||cherry,papaya
+Грейпфрут||grapefruit
+Екзотичні фрукти||tropic
+Енергетик||energy
+Желейні ведмедики||jelly
+Кавун, диня||watermelon,melon
+Кавуновий лимонад||watermelon,lemonade
+Кокос, ананас, диня||coconut,pineapple,melon
+Кола||cola
+Лайм||lime
+Лайм, персик||lime,peach
+Лимон||lemon
+Лісові ягоди||berries
+Лічі, лайм, лохина||lychee,lime,blueberry`,
+g:`№01 Double Currant||bcurrant,rcurrant
+№02 Lemtea Cup||lemon,tea
+№03 Big & Small Melon||watermelon,melon
+№04 Cream Cookie||cookie,cream
+№05 Cherry Queen||cherry
+№06 Pineapple Twist||pineapple
+№07 Grapefruit Mood||grapefruit
+№08 Grape Dance||grape
+№10 Cola Sour||cola,sour
+№11 Battle Orange||orange
+№13 Nice Berry's||berries
+№15 Sexy Coco||coconut
+№16 Barberry Shot||barberry
+№19 Tropic Food||tropic
+№20 Only Ice||ice
+№22 Blumist Gum||blueberry,mint,gum
+№24 Needles In The Tropics||pine,tropic
+№25 Lemon Yougurt||lemon,cream
+№26 Strawberries Cream||strawberry,cream
+№27 Papaya Lime||papaya,lime
+№28 Waterlemon||watermelon,lemon`,
+e:`Arctic||ice
+Elder|Бузина|flower
+Feijo|Фейхоа|tropic
+Fragaria|Полуниця|strawberry
+Granadilla|Маракуя|passion
+Mangifera|Манго|mango
+Nectarinium|Нектарин|peach
+Pomelium|Помело|pomelo
+Pyraster|Груша|pear
+Rubus|Малина|raspberry`};
 const CAT=[],BYID={};
-for(const b in RAW)RAW[b].split('\n').forEach(l=>{const a=l.split('|');const t={id:b+':'+a[0].toLowerCase().replace(/[^a-zа-яіїєґ0-9]+/g,'-'),b:BR[b],n:a[0],d:a[1],notes:a[2].split(','),ln:a[3]||''};CAT.push(t);BYID[t.id]=t});
+for(const b in RAW)RAW[b].split('\n').forEach(l=>{const a=l.split('|');const t={id:b+':'+a[0].toLowerCase().replace(/[^a-zа-яіїєґ0-9]+/g,'-'),b:BR[b],n:a[0],d:a[1],notes:a[2].split(','),ln:a[3]||'',s:LNS[a[3]]||BS[b]};CAT.push(t);BYID[t.id]=t});
 
 /* ---------- Стан і збереження ---------- */
 const LS='hookahmix.v1',CH=2000;
@@ -357,6 +643,17 @@ const tdesc=t=>t.d||t.notes.map(k=>N[k].l).join(', ');
 const wts=t=>t.notes.map((k,i)=>[k,i?.6:1]);
 const domCat=t=>t.notes.length?N[t.notes[0]].c:'O';
 const left=s=>Math.max(0,s.pack-s.used);
+const tstr=t=>{const s=S.shelf.find(x=>x.id===t.id);return(s&&s.s)||t.s||2};
+const mixS=items=>items.reduce((a,[id,p])=>a+tstr(tob(id))*p/100,0);
+const bucket=s=>s<1.6?1:s<2.5?2:3;
+function rec(items){const s=mixS(items),b=bucket(s),dess=items.reduce((a,[id,p])=>a+(domCat(tob(id))==='D'?p:0),0)>=50;
+  const r=b===1?{bowl:'Фанел',coals:3,pk:'Середня',why:'Легкий тютюн любить жар: забивай щільніше, три вугілля дадуть смак і дим.'}
+    :b===2?{bowl:'Фанел',coals:3,pk:'Пухка',why:'Середня міцність: забивай пухко, після прогріву можна лишити два вугілля.'}
+    :{bowl:'Убивашка',coals:2,pk:'Пухка',why:'Міцний тютюн: пухко, з відступом від фольги і менше жару, інакше гірчить і б’є в голову. Третє вугілля додавай, лише якщо мало диму.'};
+  if(dess&&b>1){r.coals=2;r.why+=' Десертні смаки гірчать від перегріву.'}
+  r.s=b;const g={};S.log.forEach(e=>{if(!e.r||e.r<4||!e.bowl||bucket(mixS(e.items))!==b)return;const k=e.bowl+'|'+e.coals;g[k]=g[k]||{n:0,s:0};g[k].n++;g[k].s+=e.r});
+  const m=Object.entries(g).sort((a,c)=>c[1].n-a[1].n||c[1].s/c[1].n-a[1].s/a[1].n)[0];
+  if(m){const[bw,c]=m[0].split('|');r.mine=bw+', '+c+' вугілля (★ '+(m[1].s/m[1].n).toFixed(1)+', забивок: '+m[1].n+')'}return r}
 const isLow=s=>left(s)<=15;
 const clamp=(x,a,b)=>Math.max(a,Math.min(b,x));
 function tax(t){let sw=0,so=0,fr=0,w=0;wts(t).forEach(([k,x])=>{sw+=N[k].sw*x;so+=N[k].so*x;fr+=N[k].fr*x;w+=x});return w?{sw:sw/w,so:so/w,fr:fr/w}:{sw:0,so:0,fr:0}}
@@ -432,7 +729,7 @@ function mixCard(items,inner,act,arg){const cl=cols(items.map(i=>i[0]));const g=
   return`<button class="card" data-a="${act}" data-x="${arg}" style="background:linear-gradient(135deg,${g.map(c=>blend(c,dark?.42:.3)).join(',')})"><div class="row">${donut(items,64,13)}<div class="names">${items.map(([id,p],i)=>`<div class="ln"><i class="dot" style="background:${cl[i]}"></i><span class="n">${esc(tname(tob(id)))}</span><b>${Math.round(p)}%</b></div>`).join('')}</div></div>${inner}</button>`}
 
 /* ---------- Екрани ---------- */
-let tab='mix',mode='me',sheet=null,q='',brandF='';
+let tab='mix',mode='me',sheet=null,q='',brandF='',fresh=false;
 const TABS=[['mix','Мікс','M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z|M18.5 15.5l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8z'],['shelf','Полиця','M3 7h18v4H3z|M5 11v8h14v-8|M10 15h4'],['log','Щоденник','M7 4h10a1 1 0 011 1v15H8a2 2 0 01-2-2V5a1 1 0 011-1z|M9.5 8.5h5|M9.5 12h5'],['taste','Смак','M12 20s-7-4.4-7-9.6A4 4 0 0112 8a4 4 0 017 2.4C19 15.6 12 20 12 20z']];
 function render(){const v={mix:vMix,shelf:vShelf,log:vLog,taste:vTaste}[tab];$('#app').innerHTML=v();
   $('#tabs').innerHTML=TABS.map(t=>`<button class="${t[0]===tab?'on':''}" data-a="tab" data-x="${t[0]}" ${t[0]===tab?'aria-current="page"':''}>${ic(t[2])}<span>${t[1]}</span></button>`).join('')}
@@ -452,11 +749,11 @@ function vShelf(){let h=`<header class="nav"><h1>Полиця</h1><button class=
   if(!S.shelf.length)return h+`<div class="empty"><div class="big">Тут поки порожньо</div><p>Познач у каталозі все, що лежить удома.</p><button class="btn" data-a="catalog">Відкрити каталог</button></div>`;
   const g={};S.shelf.forEach(s=>{const t=tob(s.id);(g[t.b||'Інше']=g[t.b||'Інше']||[]).push([s,t])});
   for(const b of Object.keys(g).sort())h+=`<h3>${esc(b)}</h3><div class="list">${g[b].sort((a,c)=>a[1].n.localeCompare(c[1].n)).map(([s,t])=>{const l=left(s),c=t.notes.length?N[t.notes[0]].col:'#8E8E93';
-    return`<button class="li" data-a="item" data-x="${esc(s.id)}"><i class="dot" style="background:${c}"></i><div class="t"><div>${esc(t.n)}</div><div class="sub">${esc(tdesc(t))}</div><div class="bar"><i style="width:${l/s.pack*100}%;background:${isLow(s)?'var(--bad)':c}"></i></div></div><span class="tr">≈ ${Math.round(l)} г</span><span class="chev">›</span></button>`}).join('')}</div>`;
+    return`<button class="li" data-a="item" data-x="${esc(s.id)}"><i class="dot" style="background:${c}"></i><div class="t"><div>${esc(t.n)}</div><div class="sub">${STL[tstr(t)]} · ${esc(tdesc(t))}</div><div class="bar"><i style="width:${l/s.pack*100}%;background:${isLow(s)?'var(--bad)':c}"></i></div></div><span class="tr">≈ ${Math.round(l)} г</span><span class="chev">›</span></button>`}).join('')}</div>`;
   return h+`<p class="foot">Залишок рахується приблизно: від пачки віднімається кожна записана забивка. Якщо розбіжність велика, поправ вручну в картці тютюну.</p>`}
 function vLog(){let h=`<header class="nav"><h1>Щоденник</h1><button class="navbtn" data-a="new" aria-label="Нова забивка">${PLUS}</button></header>`;
   if(!S.log.length)return h+`<div class="empty"><div class="big">Ще жодної забивки</div><p>Записуй, що забив, і оцінюй. З цього вчиться підбір.</p><button class="btn" data-a="new">Записати забивку</button></div>`;
-  return h+S.log.map((e,i)=>[e,i]).reverse().map(([e,i])=>mixCard(e.items,`<div class="meta"><span>${fmtD(e.t)}${e.bowl?' · '+esc(e.bowl):''}</span>${e.r?starsS(e.r):'<span style="color:var(--tint);font-weight:600">Оцінити</span>'}</div>`,'entry',i)).join('')}
+  return h+S.log.map((e,i)=>[e,i]).reverse().map(([e,i])=>mixCard(e.items,`<div class="meta"><span>${e.mem?'З пам’яті':fmtD(e.t)}${e.bowl?' · '+esc(e.bowl):''}</span>${e.r?starsS(e.r):'<span style="color:var(--tint);font-weight:600">Оцінити</span>'}</div>`,'entry',i)).join('')}
 function vTaste(){const P=prefs(),rated=S.log.filter(e=>e.r);
   let h=`<header class="nav"><h1>Смак</h1></header>`;
   const tp=Object.entries(P.t).sort((a,b)=>b[1]-a[1])[0];
@@ -469,28 +766,30 @@ function vTaste(){const P=prefs(),rated=S.log.filter(e=>e.r);
   h+=`<h3>Що докупити</h3><div class="list">${bl.map(x=>`<div class="li"><i class="dot" style="background:${N[x.t.notes[0]].col}"></i><div class="t"><div>${esc(tname(x.t))}</div><div class="sub">${esc(tdesc(x.t))}</div><div class="sub" style="color:var(--tint)">${esc(x.why)}</div></div><button class="chip sm" data-a="bought" data-x="${esc(x.t.id)}">Купив</button></div>`).join('')}</div>`;
   h+=`<h3>Налаштування</h3><div class="list"><div class="li"><div class="t"><div>Вага забивки</div><div class="sub">Якщо не зважуєш, для залишків береться вона</div></div><span class="tr">${S.set.g} г</span><div class="step"><button data-a="setg" data-x="-1" aria-label="Менше">−</button><button data-a="setg" data-x="1" aria-label="Більше">+</button></div></div>
   <button class="li" data-a="backup"><div class="t"><div>Резервна копія</div><div class="sub">Експорт та імпорт даних</div></div><span class="chev">›</span></button></div>
-  <p class="foot">Каталог: ${CAT.length} смаків 420, Unity, Heven, CULTt і Custom з українських магазинів, жовтень 2026. Чого немає, додай вручну в каталозі. 18+</p>`;
+  <p class="foot">Каталог: ${CAT.length} смаків від ${Object.keys(BR).length} виробників з українських магазинів, жовтень 2026. Міцність вказана за лінійкою, її можна поправити в картці тютюну. Чого немає, додай вручну в каталозі. 18+</p>`;
   return h}
 
 /* ---------- Шторки ---------- */
-function open(type,d){sheet={type,d:d||{}};q='';brandF='';renderSheet();try{tgOK&&TG.BackButton.show()}catch(e){}}
+function open(type,d){fresh=!sheet;sheet={type,d:d||{}};q='';brandF='';renderSheet();try{tgOK&&TG.BackButton.show()}catch(e){}}
 function close(){sheet=null;$('#sheet').innerHTML='';try{tgOK&&TG.BackButton.hide()}catch(e){}render()}
 function shell(title,body,right){return`<div class="backdrop" data-a="close"></div><section class="sheet" role="dialog" aria-modal="true" aria-label="${esc(title)}"><div class="grab"></div><div class="shead"><button data-a="close">${right?'Скасувати':'Закрити'}</button><h2>${esc(title)}</h2>${right?`<button class="b" data-a="${right[1]}">${right[0]}</button>`:'<span style="width:60px"></span>'}</div><div class="sbody">${body}</div></section>`}
 function renderSheet(keep){if(!sheet)return;const sb=$('.sbody'),st=keep&&sb?sb.scrollTop:0;
   $('#sheet').innerHTML={catalog:sCatalog,custom:sCustom,item:sItem,editor:sEditor,entry:sEntry,backup:sBackup}[sheet.type]();
-  if(st)$('.sbody').scrollTop=st;if(sheet.type==='editor')bindDonut()}
+  if(!fresh)document.querySelectorAll('.sheet,.backdrop').forEach(e=>e.classList.add('na'));fresh=false;if(st)$('.sbody').scrollTop=st;if(sheet.type==='editor')bindDonut()}
 function catRows(){const have=new Set(S.shelf.map(s=>s.id)),qq=q.trim().toLowerCase();
   const all=CAT.concat(S.custom).filter(t=>(!brandF||(brandF==='*'?t.id[0]==='x':t.b===brandF))&&(!qq||(tname(t)+' '+tdesc(t)).toLowerCase().includes(qq)));
   if(!all.length)return`<div class="empty"><p>Нічого не знайдено. Додай свій тютюн кнопкою нижче.</p></div>`;
-  return`<div class="list">${all.map(t=>`<button class="li" data-a="toggle" data-x="${esc(t.id)}"><i class="dot" style="background:${t.notes.length?N[t.notes[0]].col:'#8E8E93'}"></i><div class="t"><div>${esc(t.n)}</div><div class="sub">${esc(t.b+(t.ln?' '+t.ln:''))} · ${esc(tdesc(t))}</div></div><span class="check ${have.has(t.id)?'on':''}"></span></button>`).join('')}</div>`}
+  return`<div class="list">${all.map(t=>`<button class="li" data-a="toggle" data-x="${esc(t.id)}"><i class="dot" style="background:${t.notes.length?N[t.notes[0]].col:'#8E8E93'}"></i><div class="t"><div>${esc(t.n)}</div><div class="sub">${esc(t.b+(t.ln?' '+t.ln:''))} · ${esc(tdesc(t))}</div></div><span class="tr" style="font-size:12px">${STL[tstr(t)]}</span><span class="check ${have.has(t.id)?'on':''}"></span></button>`).join('')}</div>`}
 function sCatalog(){const bs=[['','Усі']].concat(Object.values(BR).map(b=>[b,b]),S.custom.length?[['*','Свої']]:[]);
   return shell('Каталог',`<input class="search" type="search" placeholder="Пошук: назва або смак" value="${esc(q)}" data-i="q" aria-label="Пошук"><div class="chips">${bs.map(b=>`<button class="chip ${b[0]===brandF?'on':''}" data-a="brand" data-x="${b[0]}">${b[1]}</button>`).join('')}</div><div id="catrows">${catRows()}</div><button class="btn gray" data-a="custom">Додати свій тютюн</button>`)}
 function sCustom(){const d=sheet.d;d.notes=d.notes||[];
   return shell('Свій тютюн',`<h3>Назва</h3><input class="field" placeholder="Бренд" value="${esc(d.b||'')}" data-i="cb" style="margin-bottom:8px"><input class="field" placeholder="Смак, як на пачці" value="${esc(d.n||'')}" data-i="cn">
+  <h3>Міцність</h3><div class="seg">${[1,2,3].map(v=>`<button class="${(d.s||2)===v?'on':''}" data-a="cstr" data-x="${v}">${STL[v]}</button>`).join('')}</div>
   <h3>Що у смаку (до 4, головний першим)</h3>${Object.keys(CATL).map(c=>`<div class="sub" style="margin:10px 0 6px">${CATL[c]}</div><div class="chips wrap">${Object.values(N).filter(n=>n.c===c).map(n=>`<button class="chip sm ${d.notes.includes(n.k)?'on':''}" data-a="cnote" data-x="${n.k}"><i class="dot" style="background:${n.col}"></i>${n.l}${d.notes.includes(n.k)?' · '+(d.notes.indexOf(n.k)+1):''}</button>`).join('')}</div>`).join('')}`,['Додати','csave'])}
 function sItem(){const s=S.shelf.find(x=>x.id===sheet.d.id);if(!s)return'';const t=tob(s.id),l=left(s),c=t.notes.length?N[t.notes[0]].col:'#8E8E93';
   const us=S.log.filter(e=>e.items.some(i=>i[0]===s.id)),rt=us.filter(e=>e.r);
   return shell(t.n,`<div class="sub" style="text-align:center;margin-bottom:10px">${esc(t.b+(t.ln?' '+t.ln:''))}</div><div class="chips wrap" style="justify-content:center">${t.notes.map(k=>`<span class="chip sm"><i class="dot" style="background:${N[k].col}"></i>${N[k].l}</span>`).join('')}</div>
+  <h3>Міцність</h3><div class="seg">${[1,2,3].map(v=>`<button class="${tstr(t)===v?'on':''}" data-a="str" data-x="${v}">${STL[v]}</button>`).join('')}</div>
   <h3>Залишок</h3><div class="list"><div class="li"><div class="t"><div>≈ ${Math.round(l)} г із ${s.pack}</div><div class="bar"><i style="width:${l/s.pack*100}%;background:${isLow(s)?'var(--bad)':c}"></i></div></div><div class="step"><button data-a="left" data-x="-10" aria-label="Менше на 10 грамів">−</button><button data-a="left" data-x="10" aria-label="Більше на 10 грамів">+</button></div></div></div>
   <h3>Нова пачка</h3><div class="chips wrap">${[40,50,100,200,250].map(g=>`<button class="chip" data-a="pack" data-x="${g}">${g} г</button>`).join('')}</div>
   <h3>Історія</h3><div class="list"><div class="li"><div class="t">Забивок із ним</div><span class="tr">${us.length}</span></div><div class="li"><div class="t">Середня оцінка міксів</div><span class="tr">${rt.length?'★ '+(rt.reduce((a,e)=>a+e.r,0)/rt.length).toFixed(1):'—'}</span></div></div>
@@ -504,13 +803,21 @@ function edDonut(){const E=sheet.d,sz=240,sw=46,r=(sz-sw)/2,C=2*Math.PI*r,cl=col
   cums().slice(0,-1).forEach(c=>{const a=c/100*2*Math.PI-Math.PI/2,x=120+r*Math.cos(a),y=120+r*Math.sin(a);h+=`<circle cx="${x}" cy="${y}" r="14" fill="#fff" stroke="rgba(0,0,0,.18)"/><circle cx="${x}" cy="${y}" r="4" fill="#1C1C1E"/>`});return h}
 function edRows(){const E=sheet.d,cl=cols(E.items.map(i=>i.id));
   return E.items.map((it,i)=>{const t=tob(it.id);return`<div class="li"><i class="dot" style="background:${cl[i]}"></i><div class="t"><div>${esc(t.n)}</div><div class="sub">${esc(t.b)}</div></div><span class="val">${E.G?(Math.round(it.p*E.G/50)/2)+' г':Math.round(it.p)+'%'}${E.G?`<small>${Math.round(it.p)}%</small>`:''}</span><div class="step"><button data-a="adj" data-x="${i}" data-d="-1" aria-label="Менше">−</button><button data-a="adj" data-x="${i}" data-d="1" aria-label="Більше">+</button></div><button class="x" data-a="del" data-x="${i}" aria-label="Прибрати">×</button></div>`}).join('')}
+function eqRows(){const E=sheet.d,qq=(E.q||'').trim().toLowerCase();if(!qq)return'';const inMix=new Set(E.items.map(i=>i.id));
+  const r=CAT.concat(S.custom).filter(t=>!inMix.has(t.id)&&(tname(t)+' '+tdesc(t)).toLowerCase().includes(qq)).slice(0,8);
+  if(!r.length)return'<p class="foot">Не знайдено. Додай свій тютюн у каталозі на вкладці «Полиця».</p>';
+  return`<div class="list">${r.map(t=>`<button class="li" data-a="add" data-x="${esc(t.id)}"><i class="dot" style="background:${N[t.notes[0]].col}"></i><div class="t"><div>${esc(tname(t))}</div><div class="sub">${esc(tdesc(t))}</div></div><span class="tr" style="font-size:12px">${STL[tstr(t)]}</span></button>`).join('')}</div>`}
+function edRec(){const E=sheet.d;if(!E.items.length)return'';const r=rec(E.items.map(i=>[i.id,i.p]));const same=E.bowl===r.bowl&&E.coals===r.coals&&E.pk===r.pk;
+  return`<h3>Порада: чаша і жар</h3><div class="list"><div class="li"><div class="t w"><div style="font-weight:600">${r.bowl} · ${r.coals} вугілля · ${r.pk.toLowerCase()} забивка</div><div class="sub">Мікс ${['','легкий','середньої міцності','міцний'][r.s]}. ${r.why}</div>${r.mine?`<div class="sub" style="color:var(--tint)">У тебе добре заходило: ${esc(r.mine)}</div>`:''}</div>${same?'':'<button class="chip sm" data-a="recuse">Застосувати</button>'}</div></div><p class="foot">Розрахунок на вугілля 25 мм. Це загальне правило, орієнтуйся на свій кальян.</p>`}
 function sEditor(){const E=sheet.d,inMix=new Set(E.items.map(i=>i.id)),rest=S.shelf.filter(s=>!inMix.has(s.id)&&left(s)>0).map(s=>tob(s.id));
   const seg=(k,arr)=>`<div class="seg">${arr.map(v=>`<button class="${E[k]===v?'on':''}" data-a="opt" data-k="${k}" data-x="${v}">${v}</button>`).join('')}</div>`;
   return shell('Забивка',`<div class="donutwrap"><svg id="edd" width="240" height="240" viewBox="0 0 240 240" role="img" aria-label="Частки тютюну в чаші">${edDonut()}</svg><div class="dcenter" id="edc"><b>${E.G?E.G+' г':E.items.length||'—'}</b><span>${E.G?'у чаші':E.items.length?'у міксі':'обери тютюн'}</span></div></div>
   ${E.items.length>1?'<p class="sub" style="text-align:center;margin:-6px 0 12px">Тягни білі точки, щоб змінити частки</p>':''}
   <div class="list" id="edrows">${edRows()}</div>
   ${E.items.length<4&&rest.length?`<h3>Додати з полиці</h3><div class="chips wrap">${rest.map(t=>`<button class="chip sm" data-a="add" data-x="${esc(t.id)}"><i class="dot" style="background:${N[t.notes[0]]?N[t.notes[0]].col:'#8E8E93'}"></i>${esc(t.n)}</button>`).join('')}</div>`:''}
-  ${!S.shelf.length?'<p class="foot">На полиці порожньо. Спочатку додай тютюн у вкладці «Полиця».</p>':''}
+  ${E.items.length<4?`<h3>Немає на полиці? Знайди в каталозі</h3><input class="search" type="search" placeholder="Назва або смак" value="${esc(E.q||'')}" data-i="eq" aria-label="Пошук у каталозі" style="margin-bottom:8px"><div id="eqrows">${eqRows()}</div>`:''}
+  <div class="list" style="margin-top:14px"><button class="li" data-a="mem"><div class="t w"><div>З пам’яті</div><div class="sub">Курив раніше: оцінка піде у смак, з полиці нічого не спишеться</div></div><span class="check ${E.mem?'on':''}"></span></button></div>
+  <div id="edrec">${edRec()}</div>
   <h3>Вага</h3><div class="list"><div class="li"><div class="t"><div>${E.G?'Зважив':'Без ваг'}</div><div class="sub">${E.G?'Кнопки − і + міняють грами':'Частки у відсотках, на око'}</div></div>${E.G?`<span class="tr">${E.G} г</span><div class="step"><button data-a="G" data-x="-1" aria-label="Менше">−</button><button data-a="G" data-x="1" aria-label="Більше">+</button></div>`:''}<button class="chip sm" data-a="Gt">${E.G?'Вимкнути':'Є ваги'}</button></div></div>
   <h3>Чаша</h3>${seg('bowl',BOWLS)}<h3>Жар</h3>${seg('heat',HEAT)}<h3>Вугілля, шт</h3>${seg('coals',COALS)}<h3>Щільність</h3>${seg('pk',PK)}
   <h3>Оцінка (можна пізніше)</h3><div class="list" style="padding:2px 8px">${stars(E.r,'er')}</div>
@@ -541,7 +848,7 @@ function bindDonut(){const el=$('#edd');if(!el)return;let act=-1;
     if(Math.abs(v+100-cur)<Math.abs(v-cur))v+=100;else if(Math.abs(v-100-cur)<Math.abs(v-cur))v-=100;
     const st=E.G?100/(E.G*2):5,mn=E.G?st*2:5;v=clamp(Math.round(v/st)*st,lo+mn,hi-mn);if(Math.abs(v-cur)<.001)return;
     E.items[act].p=v-lo;E.items[act+1].p=hi-v;el.innerHTML=edDonut();$('#edrows').innerHTML=edRows();hap()};
-  el.onpointerup=el.onpointercancel=()=>{act=-1}}
+  el.onpointerup=el.onpointercancel=()=>{if(act>=0)$('#edrec').innerHTML=edRec();act=-1}}
 
 /* ---------- Дії ---------- */
 const A={
@@ -556,8 +863,12 @@ const A={
   custom(){open('custom',{notes:[]})},
   cnote(d){const n=sheet.d.notes,i=n.indexOf(d.x);if(i>=0)n.splice(i,1);else if(n.length<4)n.push(d.x);renderSheet(1)},
   csave(){const d=sheet.d;if(!(d.n||'').trim()||!d.notes.length)return toast('Вкажи назву і хоча б один смак');
-    const t={id:'x:'+Date.now().toString(36),b:(d.b||'').trim(),n:d.n.trim(),d:'',notes:d.notes,ln:''};S.custom.push(t);S.shelf.push({id:t.id,pack:100,used:0});save();hap('ok');toast('Додано на полицю');close()},
+    const t={id:'x:'+Date.now().toString(36),b:(d.b||'').trim(),n:d.n.trim(),d:'',notes:d.notes,ln:'',s:d.s||2};S.custom.push(t);S.shelf.push({id:t.id,pack:100,used:0});save();hap('ok');toast('Додано на полицю');close()},
   item(d){open('item',{id:d.x})},
+  str(d){const s=S.shelf.find(x=>x.id===sheet.d.id);s.s=+d.x;save();hap();renderSheet(1)},
+  cstr(d){sheet.d.s=+d.x;renderSheet(1)},
+  mem(){sheet.d.mem=!sheet.d.mem;hap();renderSheet(1)},
+  recuse(){const E=sheet.d,r=rec(E.items.map(i=>[i.id,i.p]));E.bowl=r.bowl;E.coals=r.coals;E.pk=r.pk;hap('ok');renderSheet(1)},
   left(d){const s=S.shelf.find(x=>x.id===sheet.d.id);s.used=clamp(s.used-(+d.x),0,s.pack);save();renderSheet(1)},
   pack(d){const s=S.shelf.find(x=>x.id===sheet.d.id);s.pack=+d.x;s.used=0;save();hap('ok');renderSheet(1)},
   remove(){S.shelf=S.shelf.filter(x=>x.id!==sheet.d.id);save();close()},
@@ -566,16 +877,16 @@ const A={
   setg(d){S.set.g=clamp(S.set.g+(+d.x),8,40);save();const y=window.scrollY;render();window.scrollTo(0,y)},
   rate(d){const e=S.log[+d.x];if(!e)return;e.r=+d.r;save();hap('ok');toast('Оцінку збережено');if(sheet)renderSheet(1);else render()},
   entry(d){open('entry',{i:+d.x})},
-  add(d){edAdd(d.x);hap();renderSheet(1)},
+  add(d){edAdd(d.x);sheet.d.q='';hap();renderSheet(1)},
   del(d){const E=sheet.d,p=E.items[+d.x].p;E.items.splice(+d.x,1);if(E.items.length){const b=E.items.reduce((a,i)=>i.p>a.p?i:a);b.p+=p}renderSheet(1)},
-  adj(d){edAdj(+d.x,+d.d);hap();$('#edd').innerHTML=edDonut();$('#edrows').innerHTML=edRows();const c=$('#edc b');if(sheet.d.G)c.textContent=sheet.d.G+' г'},
+  adj(d){edAdj(+d.x,+d.d);hap();$('#edd').innerHTML=edDonut();$('#edrows').innerHTML=edRows();const c=$('#edc b');if(sheet.d.G)c.textContent=sheet.d.G+' г';$('#edrec').innerHTML=edRec()},
   G(d){const E=sheet.d;E.G=clamp(E.G+(+d.x),5,45);renderSheet(1)},
   Gt(){const E=sheet.d;E.G=E.G?0:S.set.g;if(!E.G)E.items.forEach(i=>i.p=Math.round(i.p)),edFix();renderSheet(1)},
   opt(d){sheet.d[d.k]=d.k==='coals'?+d.x:d.x;hap();renderSheet(1)},
   er(d){sheet.d.r=sheet.d.r===+d.r?0:+d.r;hap();renderSheet(1)},
   esave(){const E=sheet.d;if(!E.items.length)return;const ps=E.items.map(i=>Math.round(i.p));ps[ps.indexOf(Math.max(...ps))]+=100-ps.reduce((a,b)=>a+b,0);
-    const g=E.G||S.set.g;E.items.forEach((it,i)=>{const s=S.shelf.find(x=>x.id===it.id);if(s)s.used=Math.min(s.pack,s.used+g*ps[i]/100)});
-    S.log.push({t:Date.now(),items:E.items.map((it,i)=>[it.id,ps[i]]),g:E.G||0,bowl:E.bowl,heat:E.heat,coals:E.coals,pk:E.pk,r:E.r,note:E.note.trim()});
+    const g=E.G||S.set.g;if(!E.mem)E.items.forEach((it,i)=>{const s=S.shelf.find(x=>x.id===it.id);if(s)s.used=Math.min(s.pack,s.used+g*ps[i]/100)});
+    S.log.push({t:Date.now(),items:E.items.map((it,i)=>[it.id,ps[i]]),g:E.G||0,bowl:E.bowl,heat:E.heat,coals:E.coals,pk:E.pk,r:E.r,note:E.note.trim(),mem:E.mem?1:0});
     S.set.last={bowl:E.bowl,heat:E.heat,coals:E.coals,pk:E.pk};save();hap('ok');tab='log';close();toast(E.r?'Забивку збережено':'Збережено. Оціни, коли покуриш')},
   repeat(){const e=S.log[sheet.d.i];const E=newEd(e.items.filter(i=>S.shelf.some(s=>s.id===i[0])).map(i=>({id:i[0],p:i[1]})));
     if(E.items.length<e.items.length)toast('Частини тютюну вже немає на полиці');Object.assign(E,{bowl:e.bowl,heat:e.heat,coals:e.coals,pk:e.pk,G:e.g||0});sheet={type:'editor',d:E};edFix();renderSheet()},
@@ -589,7 +900,7 @@ const A={
 };
 document.addEventListener('click',e=>{const el=e.target.closest('[data-a]');if(!el||el.disabled)return;const f=A[el.dataset.a];if(f)f(el.dataset)});
 document.addEventListener('input',e=>{const k=e.target.dataset.i;if(!k)return;const v=e.target.value;
-  if(k==='q'){q=v;$('#catrows').innerHTML=catRows()}else if(k==='cb')sheet.d.b=v;else if(k==='cn')sheet.d.n=v;else if(k==='note')sheet.d.note=v;
+  if(k==='q'){q=v;$('#catrows').innerHTML=catRows()}else if(k==='cb')sheet.d.b=v;else if(k==='cn')sheet.d.n=v;else if(k==='note')sheet.d.note=v;else if(k==='eq'){sheet.d.q=v;$('#eqrows').innerHTML=eqRows()}
   else if(k==='enote'){S.log[sheet.d.i].note=v;save()}});
 
 /* ---------- Старт ---------- */
